@@ -1,0 +1,41 @@
+{
+    "name": "auto-project",
+    "author": "JCC",
+    "version": "1.1.1",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:JinChunCheng/auto-project.git"
+    },
+    "dependencies": {
+        "chart.js": "^2.4.0",
+        "mint-ui": "^1.0.2",
+        "vue": "^1.0.26",
+        "vue-router": "^0.7.13"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.14.0",
+        "browsersync-ssi": "^0.2.4",
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.3.2",
+        "gulp-sass": "^2.3.2",
+        "gulp-concat": "^2.6.0",
+        "gulp-minify": "0.0.14",
+        "gulp-minify-css": "^1.2.4",
+        "gulp-plumber": "^1.1.0",
+        "gulp-run-sequence": "^0.3.2",
+        "gulp-uglify": "^2.0.0",
+        "gulp-zip": "^3.2.0",
+        "plumber": "^0.4.8"
+    },
+    "keywords": [
+        "vue",
+        "vue-router",
+        "webpack",
+        "gulp"
+    ]
+}
