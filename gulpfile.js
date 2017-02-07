@@ -75,7 +75,16 @@ gulp.task('js', function() {
         .pipe(browserSync.stream());
 });
 
-
+//js任务，将js压缩后放入dist。该任务要在clean-scripts任务完成后再执行
+gulp.task('json', function() {
+    //首先取得app/data下的所有后缀为.json的文件（**/的意思是包含所有子文件夹）
+    return gulp.src('app/data/**/*.json')
+        .pipe(minify())
+        //输出到dist/javascript
+        .pipe(gulp.dest("dist/data"))
+        //自动刷新浏览器
+        .pipe(browserSync.stream());
+});
 
 //html任务，目前什么都没做。只是单纯的把所有html从开发环境app复制到测试环境dist
 gulp.task('html', function() {
@@ -95,7 +104,7 @@ gulp.task("clean", function() {
 //redist任务：需要时手动执行，重建dist文件夹：首先清空，然后重新处理所有文件
 gulp.task('redist', function() {
     //先运行clean，然后并行运行html,js,sass
-    runSequence('clean', ['html', 'js', 'sass']);
+    runSequence('clean', ['html', 'js', 'sass','json']);
 });
 //建立一个名为default的默认任务。当你在gitbash中执行gulp命令的时候，就会
 gulp.task('default', function() {
